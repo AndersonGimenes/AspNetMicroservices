@@ -1,3 +1,4 @@
+using Basket.API.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,8 +19,7 @@ namespace Basket.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddStackExchangeRedisCache(options => 
-                options.Configuration = _configuration.GetValue<string>("RedisConfiguration:ConnectionString"));
+            services.RedisConfiguration(_configuration);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

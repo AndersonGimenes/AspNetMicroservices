@@ -1,4 +1,4 @@
-﻿using Discount.API.Repositories.Factories;
+﻿using Discount.API.IoC.Factories;
 using Discount.API.Repositories.MigrationQueries;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;

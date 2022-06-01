@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Npgsql;
 
-namespace Discount.API.Repositories.Factories
+namespace Discount.API.IoC.Factories
 {
     public static class NpgsqlConnectionFactory
     {

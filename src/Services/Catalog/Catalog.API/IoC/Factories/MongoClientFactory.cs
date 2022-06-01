@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using MongoDB.Driver;
 
-namespace Catalog.API.Data.Factories
+namespace Catalog.API.IoC.Factories
 {
     public static class MongoClientFactory
     {

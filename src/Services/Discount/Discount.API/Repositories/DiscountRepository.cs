@@ -1,9 +1,8 @@
 ﻿using Dapper;
 using Discount.API.Entities;
-using Discount.API.Repositories.Factories;
+using Discount.API.IoC.Factories;
 using Discount.API.Repositories.Queries;
 using Microsoft.Extensions.Configuration;
-using Npgsql;
 using System.Threading.Tasks;
 
 namespace Discount.API.Repositories
