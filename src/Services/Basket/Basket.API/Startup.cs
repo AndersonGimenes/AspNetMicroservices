@@ -19,7 +19,8 @@ namespace Basket.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.RedisConfiguration(_configuration);
+            services.RedisConfiguration(_configuration)
+                    .GrpcClientConfiguration(_configuration);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

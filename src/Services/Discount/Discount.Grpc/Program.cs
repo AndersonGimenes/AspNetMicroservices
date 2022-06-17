@@ -1,9 +1,9 @@
-using Discount.API.Extensions;
-using Discount.API.IoC;
+using Discount.Grpc.Extensions;
+using Discount.Grpc.IoC;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Discount.API
+namespace Discount.Grpc
 {
     public class Program
     {

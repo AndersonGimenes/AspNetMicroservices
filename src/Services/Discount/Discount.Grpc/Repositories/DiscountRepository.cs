@@ -1,11 +1,11 @@
 ﻿using Dapper;
-using Discount.API.Entities;
-using Discount.API.IoC.Factories;
-using Discount.API.Repositories.Queries;
+using Discount.Grpc.Entities;
+using Discount.Grpc.IoC.Factories;
+using Discount.Grpc.Repositories.Queries;
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 
-namespace Discount.API.Repositories
+namespace Discount.Grpc.Repositories
 {
     public class DiscountRepository : IDiscountRepository
     {
@@ -20,7 +20,7 @@ namespace Discount.API.Repositories
         {
             using (var context = NpgsqlConnectionFactory.GetInstance(_confirguration))
             {
-                var result = await context.QueryFirstAsync<Coupon>(DiscountQueries.GetDiscount(), new { ProductName = productName });
+                var result = await context.QueryFirstOrDefaultAsync<Coupon>(DiscountQueries.GetDiscount(), new { ProductName = productName });
 
                 if (result is null)
                     return new Coupon { ProductName = "No Discount", Description = "No Discount Desc" };
