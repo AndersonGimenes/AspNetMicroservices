@@ -12,9 +12,7 @@ namespace Basket.API.IoC
         public static void InjectionDenpencyConfiguration(this IServiceCollection services)
         {
             services.AddScoped<IBasketRepository, BasketRepository>();  
-            services.AddScoped<IDiscountGrpcService, DiscountGrpcService>();
-
-            
+            services.AddScoped<IDiscountGrpcService, DiscountGrpcService>();            
         }
 
         public static IServiceCollection RedisConfiguration(this IServiceCollection services, IConfiguration configuration)

@@ -1,8 +1,8 @@
-using Catalog.API.IoC;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Ordering.Application.IoC;
 
-namespace Catalog.API
+namespace Ordering.API
 {
     public class Program
     {
@@ -13,10 +13,7 @@ namespace Catalog.API
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                })
-                .ConfigureServices(sevices => sevices.InjectionDenpencyConfiguration());
+                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>())
+                .ConfigureServices(services => services.InjectionDenpencyConfiguration());
     }
 }

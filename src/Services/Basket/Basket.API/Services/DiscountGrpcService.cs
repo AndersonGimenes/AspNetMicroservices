@@ -14,7 +14,7 @@ namespace Basket.API.Services
 
         public void DiscountCalculate(ShoppingCart cart)
         {
-            foreach(var item in cart.Items)
+            foreach (var item in cart.Items)
             {
                 var coupon = _discountProtoService.GetDiscount(new GetDiscountRequest { ProductName = item.ProductName });
                 item.Price -= coupon.Amount;
