@@ -8,7 +8,7 @@ namespace Ordering.Application.IoC
 {
     public static class InjectionDependecyExtension
     {
-        public static void InjectionDenpencyConfiguration(this IServiceCollection services)
+        public static void InjectionDependencyConfiguration(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());

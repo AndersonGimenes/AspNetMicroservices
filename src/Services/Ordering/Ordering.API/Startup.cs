@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Ordering.API.IoC;
 using Ordering.Infrastructure.IoC;
 using Ordering.Infrastructure.Persistence;
 
@@ -21,7 +22,9 @@ namespace Ordering.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.InjectionDenpencyConfiguration(_configuration);
+            services.InjectionDependencyConfiguration(_configuration);
+            
+            services.RabbitMqConfiguration(_configuration);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

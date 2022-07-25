@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Ordering.API.IoC;
 using Ordering.Application.IoC;
 
 namespace Ordering.API
@@ -14,6 +15,10 @@ namespace Ordering.API
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>())
-                .ConfigureServices(services => services.InjectionDenpencyConfiguration());
+                .ConfigureServices(services =>
+                {
+                    services.InjectionDependencyConfiguration();
+                    services.InjectionDependencyConfigurationApi();
+                });
     }
 }
